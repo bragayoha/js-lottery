@@ -1,0 +1,56 @@
+body, html{
+    background: #F7F7F7 0% 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+#header {
+    width: 100%;
+    background-color: transparent;
+    size-adjust: 53px;
+}
+
+#header .navbar-collapse {
+    width: auto;
+}
+
+#header .navbar-brand{
+    top: 15px;
+    left: 141px;
+    width: 86px;
+    height: 53px;
+
+    text-align: center;
+    font: italic normal bold 44px/70px Helvetica;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+}
+
+#header .nav-link {
+    text-align: center;
+    font: italic normal bold 20px/70px Helvetica;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+}
+
+#link-home {
+    top: 28px;
+    left: 301px;
+    width: 56px;
+    height: 24px;
+}
+
+#link-account {
+    top: 28px;
+    left: 944px;
+    width: 80px;
+    height: 24px;
+}
+
+#link-logout {
+    top: 28px;
+    left: 1064px;
+    width: 72px;
+    height: 24px;
+}
