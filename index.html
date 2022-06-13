@@ -10,23 +10,30 @@
 
   <body>
     <!--HEADER-->
-    <div id="header" class="border-bottom" style="width: 100%;">
+    <div id="header" class="border-bottom border-2" style="width: 100%;">
         <div class="container" style="width: 100%;">
             <nav class="d-flex align-items-center" style="width: 100%;">
-                <a class="navbar-brand p-0" href="#">TGL</a>
+                <div>
+                    <a id= "navbar-logo" class="logo nav-link d-flex" href="#">TGL</a>
+                    <div class="border border-5 green-trait"></div>
+                </div>
+                
                 <ul class="navbar-nav d-flex flex-row" style="width: 100%;">
-                    <li class="nav-item me-auto p-2">
-                        <a class="nav-link active " aria-current="page" href="#link-home">Home</a>
+                    <li class="nav-item me-auto">
+                        <a class="nav-link p-0 ms-5" href="#">Home</a>
                     </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#link-account">Account</a>
+                    <li class="nav-item me-2">
+                        <a class="nav-link p-0" href="#">Account</a>
                     </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#link-logout">Log out -></a>
+                    <li class="nav-item ms-4">
+                        <a class="nav-link p-0" href="#">Log out 
+                            <img src="./assets/arrow_right_gray.png" width="25px" height="28px">
+                        </a>
                     </li>
                 </ul>
             </nav>
         </div>
+        
     </div>
     <!--//HEADER-->
     <div>
