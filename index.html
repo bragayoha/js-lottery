@@ -36,30 +36,90 @@
     </div>
     <!--//HEADER-->
     <div id="onbody" class="d-flex flex-row mt-5" style="width: 100%;" >
+        <!--LEFT "BODY"-->
         <div style="width: 60%; height: 100%;">
-            <ul class="d-flex flex-row p-0 ms-5 mb-0">
-                <p class="new-bet me-2">NEW BET</p><p class="fms">FOR MEGA-SENA</p>
-            </ul>
-            <ul class="d-flex flex-column p-0 ms-5 mt-0">
-                <p class="cag">Choose a game</p>
+            <div class="d-flex flex-row p-0 ms-5 mb-0">
+                <p class="new-bet me-2 mb-0">NEW BET</p><p class="fms mb-0">FOR MEGA-SENA</p>
+            </div>
+            <div class="d-flex flex-column p-0 ms-5 mt-0">
+                <p class="cag m-0">Choose a game</p>
                 <div class="game-button d-flex flex-row">
-                    <input type="radio" class="btn-check" name="options-outlined" id="lf-outlined" autocomplete="off">
+                    <input type="radio" class="btn-check" name="options-outlined" id="lf-outlined" data-js="lf-button" autocomplete="off">
                     <label class="g-b btn btn-outline-lf me-4" for="lf-outlined">Lotofácil</label>
 
-                    <input type="radio" class="btn-check" name="options-outlined" id="ms-outlined" autocomplete="off" checked>
+                    <input type="radio" class="btn-check" name="options-outlined" id="ms-outlined" data-js="ms-button" autocomplete="off" checked>
                     <label class="g-b btn btn-outline-ms me-4" for="ms-outlined">Mega-Sena</label>
 
-                    <input type="radio" class="btn-check" name="options-outlined" id="q-outlined" autocomplete="off">
+                    <input type="radio" class="btn-check" name="options-outlined" id="q-outlined" data-js="q-button" autocomplete="off">
                     <label class="g-b btn btn-outline-q" for="q-outlined">Quina</label>
                 </div>
-                <p data-js="game-desc"></p>
-            </ul>
+            </div>
+            <div class="d-flex flex-column p-0 ms-5 mt-5">
+                <p class="fyb">Fill your bet</p>
+                <p class="gd" data-js="game-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="d-flex flex-row flex-wrap p-0 ms-5 mt-3">
+                <input type="checkbox" class="btn-check" id="game-number-01" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-01">01</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-02" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-02">02</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-03" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-03">03</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-04" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-04">04</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-05" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-05">05</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-06" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-06">06</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-07" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-07">07</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-08" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-08">08</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-09" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-09">09</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-10" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-10">10</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-11" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-11">11</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-12" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-12">12</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-13" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-13">13</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-14" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-14">14</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-15" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-15">15</label>
+
+                <input type="checkbox" class="btn-check" id="game-number-16" autocomplete="off">
+                <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-16">16</label>
+            </div>
+            <div class="d-flex flex-row p-0 ms-5 mt-3">
+                <button class="btn-cp-cl border-1 me-4">Complete game</button>
+                <button class="btn-cp-cl border-1 me-4">Clear game</button>
+                <button class="btn-add-cart border-1 ms-auto me-2s">Add to cart <img src="./assets/shopping_cart.png" width="26px" height="20px"></button>
+            </div>
         </div>
+        <!--//LEFT "BODY"-->
         <div style="width: 40%; height: 100%;">
-            <p>testando</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
         </div>
     </div>
 
+    <script src="./index.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

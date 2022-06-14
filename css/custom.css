@@ -29,7 +29,7 @@ body, html{
     border-radius: 6px;
 
 }
-
+/* NEW BET FOR MEGA-SENA / Choose a game */
 .new-bet {
     font: italic normal bold 24px/85px Helvetica;
     color: #707070;
@@ -44,7 +44,7 @@ body, html{
     font: italic normal bold 17px/70px Helvetica;
     color: #707070;
 }
-
+/* Game Buttons (lotofácil, mega-sena e quina) */
 .g-b {
     font: italic normal bold 14px Helvetica;
     text-align: center;
@@ -98,4 +98,70 @@ body, html{
     --bs-btn-disabled-bg:transparent;
     --bs-gradient:none
 }
+/* Fill your bet */
+.fyb {
+    font: italic normal bold 17px/24px Helvetica;
+    color: #868686;
+}
+/* Game Description */
+.gd {
+    font: italic normal normal 17px/24px Helvetica;
+    color: #868686;
+}
+/* Game Number Button */
+.btn-gn{
+    font: normal normal bold 20px Helvetica;
+    color: #FFFFFF;
+    border-radius: 100%;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    padding: 0%;
+    --bs-btn-color:#ADC0C4;
+    --bs-btn-bg:#ADC0C4;
+    --bs-btn-border-color:#ADC0C4;
+    --bs-btn-hover-color:#ADC0C4;
+    --bs-btn-hover-bg:#707070;
+    --bs-btn-hover-border-color:#707070;
+    --bs-btn-active-color:#ADC0C4;
+    --bs-btn-active-bg:#707070;
+    --bs-btn-active-border-color:#707070;
+    --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color:#ADC0C4;
+    --bs-btn-disabled-bg:#ADC0C4;
+    --bs-btn-disabled-border-color: #707070;
+}
 
+.gn-space {
+    margin: 5px;
+}
+/* Complete Game & Clear Game Buttons */
+.btn-cp-cl {
+    font: normal normal bold 16px/24px Helvetica;
+    color: #27C383;
+    border-color: #27C383;
+    width: 160px;
+    height: 55px;
+    border-radius: 6px;
+}
+
+.btn-cp-cl:hover {
+    color: white;
+    background-color: #27C383;
+}
+/* Add to Cart Button */
+.btn-add-cart {
+    font: normal normal bold 16px/24px Helvetica;
+    color: white;
+    background-color: #27C383;
+    width: 160px;
+    height: 55px;
+    border-color: #27C383;
+    border-radius: 6px;
+}
+
+.btn-add-cart:hover {
+    background-color: #27C383;
+    border-color: #27C383;
+    color: white;
+}
