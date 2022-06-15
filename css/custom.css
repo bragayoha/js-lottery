@@ -165,3 +165,39 @@ body, html{
     border-color: #27C383;
     color: white;
 }
+/* BASEBOARD */
+#baseboard {
+    font: normal normal normal 15px/30px Helvetica;
+    color: #707070;
+}
+/* Cart Table */
+.cart-table{
+    background-color: #FFFFFF;
+    border: 1px;
+    border-color: #E2E2E2;
+    border-radius: 10px;
+}
+/* Cart Title */
+.cart-title {
+    font: italic normal bold 24px/85px Helvetica;
+    color: #707070;
+}
+/* Cart Total R$00,00 */
+.cart-total-1{
+    font: italic normal bold 24px/85px Helvetica;
+    color: #707070;
+}
+
+.cart-total-2 {
+    font: normal normal 300 24px/85px Helvetica;
+    color: #707070;
+}
+/* Save Cart */
+.save-cart {
+    background-color: #F4F4F4;
+    border-color: #E2E2E2;
+    font: italic normal bold 35px/70px Helvetica;
+    color: #27C383;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
