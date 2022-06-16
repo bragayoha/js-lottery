@@ -176,11 +176,14 @@ body, html{
     border: 1px;
     border-color: #E2E2E2;
     border-radius: 10px;
+    width: 100%;
+    max-width: 320px;
 }
 /* Cart Title */
 .cart-title {
-    font: italic normal bold 24px/85px Helvetica;
+    font: italic normal bold 24px Helvetica;
     color: #707070;
+    margin-top: 30px;
 }
 /* Cart Total R$00,00 */
 .cart-total-1{
@@ -191,6 +194,35 @@ body, html{
 .cart-total-2 {
     font: normal normal 300 24px/85px Helvetica;
     color: #707070;
+}
+/* Row Table Cart */
+.cart-content{
+    border-color: #7F3992 !important;
+    border-width: 4px !important;
+    border-radius: 4px;
+}
+
+.trash-button {
+    width: 100%;
+    max-width: 50px;
+}
+
+.card-numbers {
+    font: italic normal bold 15px/20px Helvetica;
+    color: #868686;
+    text-align: left;
+}
+
+.game-type {
+    font: italic normal bold 16px Helvetica;
+    color: #7F3992;
+    text-align: center;
+}
+
+.game-price {
+    font: normal normal normal 16px Helvetica;
+    color: #868686;
+    text-align: center;
 }
 /* Save Cart */
 .save-cart {
