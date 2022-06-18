@@ -196,10 +196,40 @@ body, html{
     color: #707070;
 }
 /* Row Table Cart */
-.cart-content{
+.cart-content-lf{
     border-color: #7F3992 !important;
     border-width: 4px !important;
     border-radius: 4px;
+}
+
+.game-type-lf {
+    font: italic normal bold 16px Helvetica;
+    color: #7F3992;
+    text-align: center;
+}
+
+.cart-content-ms{
+    border-color: #27C383 !important;
+    border-width: 4px !important;
+    border-radius: 4px;
+}
+
+.game-type-ms {
+    font: italic normal bold 16px Helvetica;
+    color: #27C383;
+    text-align: center;
+}
+
+.cart-content-q{
+    border-color: #F79C31 !important;
+    border-width: 4px !important;
+    border-radius: 4px;
+}
+
+.game-type-q {
+    font: italic normal bold 16px Helvetica;
+    color: #F79C31;
+    text-align: center;
 }
 
 .trash-button {
@@ -211,12 +241,6 @@ body, html{
     font: italic normal bold 15px/20px Helvetica;
     color: #868686;
     text-align: left;
-}
-
-.game-type {
-    font: italic normal bold 16px Helvetica;
-    color: #7F3992;
-    text-align: center;
 }
 
 .game-price {
