@@ -54,7 +54,7 @@ body, html{
     border-radius: 100px;
 }
 
-.btn-outline-lf{
+/* .btn-outline-lf{
     --bs-btn-color:#7F3992;
     --bs-btn-border-color:#7F3992;
     --bs-btn-hover-color:#fff;
@@ -97,7 +97,7 @@ body, html{
     --bs-btn-disabled-color:#F79C31;
     --bs-btn-disabled-bg:transparent;
     --bs-gradient:none
-}
+} */
 /* Fill your bet */
 .fyb {
     font: italic normal bold 17px/24px Helvetica;
