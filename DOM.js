@@ -1,97 +1,79 @@
 ((win, doc) => {
-    'use strict'
-  
-    function DOM (elements) {
-      this.element = doc.querySelectorAll(elements)
-    }
-  
-    DOM.prototype.on = function on (event, callback) {
-      this.element.forEach(function (el) {
-        el.addEventListener(event, callback, false)
-      })
-    }
-  
-    DOM.prototype.get = function get () {
-      return this.element
-    }
-  
-    DOM.prototype.off = function off (event, callback) {
-      this.element.forEach(function (el) {
-        el.removeEventListener(event, callback, false)
-      })
-    }
-  
-    DOM.prototype.forEach = function forEach (fn) {
-      Array.prototype.forEach.call(this.element, fn)
-    }
-  
-    DOM.prototype.map = function map (fn) {
-      Array.prototype.map.call(this.element, fn)
-    }
-  
-    DOM.prototype.filter = function filter (fn) {
-      Array.prototype.filter.call(this.element, fn)
-    }
-  
-    DOM.prototype.filter = function filter (fn) {
-      Array.prototype.filter.call(this.element, fn)
-    }
-  
-    DOM.prototype.reduce = function reduce (fn) {
-      Array.prototype.reduce.call(this.element, fn)
-    }
-  
-    DOM.prototype.reduceRight = function reduceRight (fn) {
-      Array.prototype.reduceRight.call(this.element, fn)
-    }
-  
-    DOM.prototype.every = function every (fn) {
-      Array.prototype.every.call(this.element, fn)
-    }
-  
-    DOM.prototype.some = function some (fn) {
-      Array.prototype.some.call(this.element, fn)
-    }
-  
-    DOM.prototype.setData = function setData (data) {
-      return (this.data = data)
-    }
-  
-    DOM.prototype.getData = function getData () {
-      return this.data
-    }
-  
-    DOM.isArray = function isArray (arr) {
-      return Object.prototype.toString.call(arr) === '[object Array]'
-    }
-  
-    DOM.isObject = function isObject (obj) {
-      return Object.prototype.toString.call(obj) === '[object Object]'
-    }
-  
-    DOM.isFunction = function isFunction (fn) {
-      return Object.prototype.toString.call(fn) === '[object Function]'
-    }
-  
-    DOM.isNumber = function isNumber (number) {
-      return Object.prototype.toString.call(number) === '[object Number]'
-    }
-  
-    DOM.isString = function isString (string) {
-      return Object.prototype.toString.call(string) === '[object String]'
-    }
-  
-    DOM.isBoolean = function isBoolean (boolean) {
-      return Object.prototype.toString.call(boolean) === '[object Boolean]'
-    }
-  
-    DOM.isNull = function isNull (element) {
-      return (
-        Object.prototype.toString.call(element) === '[object Null]' ||
-        Object.prototype.toString.call(element) === '[object Undefined]'
-      )
-    }
-  
-    win.DOM = DOM
-  })(window, document)
-  
+	function DOM(node) {
+		if (!(this instanceof DOM)) return new DOM(node)
+		this.element = document.querySelectorAll(node)
+	}
+
+	DOM.prototype.on = function (event, callback) {
+		Array.prototype.forEach.call(this.element, (element) => element.addEventListener(event, callback))
+	}
+
+	DOM.prototype.off = function (event, callback) {
+		Array.prototype.forEach.call(this.element, (element) => element.removeEventListener(event, callback))
+	}
+
+	DOM.prototype.get = function (index) {
+		if (!index) {
+			return this.element[0]
+		}
+		return this.element[index]
+	}
+
+	DOM.prototype.forEach = function (callback) {
+		Array.prototype.forEach.call(this.element, callback)
+	}
+
+	DOM.prototype.map = function (callback) {
+		return Array.prototype.map.call(this.element, callback)
+	}
+
+	DOM.prototype.filter = function (callback) {
+		return Array.prototype.filter.call(this.element, callback)
+	}
+
+	DOM.prototype.reduce = function (callback) {
+		return Array.prototype.reduce.call(this.element, callback)
+	}
+
+	DOM.prototype.reduce = function (callback) {
+		return Array.prototype.reduceRight.call(this.element, callback)
+	}
+
+	DOM.prototype.every = function (callback) {
+		return Array.prototype.every.call(this.element, callback)
+	}
+
+	DOM.prototype.some = function (callback) {
+		return Array.prototype.some.call(this.element, callback)
+	}
+
+	DOM.isArray = function (element) {
+		return Array.isArray(element)
+	}
+
+	DOM.isObject = function (element) {
+		return typeof element === 'object'
+	}
+
+	DOM.isFunction = function (element) {
+		return typeof element === 'function'
+	}
+
+	DOM.isNumber = function (element) {
+		return typeof element === 'number'
+	}
+
+	DOM.isString = function (element) {
+		return typeof element === 'string'
+	}
+
+	DOM.isBoolean = function (element) {
+		return typeof element === 'boolean'
+	}
+
+	DOM.isNull = function (element) {
+		return element === null || element === undefined
+	}
+
+	win.DOM = DOM
+})(window, document)
