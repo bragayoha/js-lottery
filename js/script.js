@@ -3,7 +3,7 @@
     
         function app () {
 
-            let gamesInfo = null
+            let gamesInfo
             
             function getData (endpoint) {
                 return new Promise((resolve, reject) => {
@@ -62,6 +62,10 @@
 
                     doc.getElementById('game-mode-button').appendChild(input)
                     doc.getElementById('game-mode-button').appendChild(label)
+
+                    label.addEventListener('click', function(){
+                        clickGameModeButton(input.id)
+                    })
                 }
             }
 
@@ -73,6 +77,8 @@
                 const firstGame = doc.getElementById(game.type)
 
                 firstGame.dispatchEvent(firstClick)
+
+                clickGameModeButton(firstGame.id)
             }
 
             async function insertGameSettings (gameModeID){
@@ -88,17 +94,21 @@
                     const input = doc.createElement('input')
                     input.setAttribute('type', 'checkbox')
                     input.setAttribute('class', 'btn-check')
-                    input.setAttribute('id', `number-${i+1}`)
+                    input.setAttribute('id', `${i+1}`)
                     input.setAttribute('autocomplete', 'off')
-
+                    
                     const label = doc.createElement('label')
                     label.setAttribute('class', 'btn btn-gn d-flex justify-content-center align-items-center gn-space')
                     label.setAttribute('for', input.id)
+                    label.setAttribute('name', currentGame.type)
                     label.innerHTML = i+1
 
                     doc.getElementById('game-number-buttons').appendChild(input)
                     doc.getElementById('game-number-buttons').appendChild(label)
-                    console.log('entrou')
+
+                    label.addEventListener('click', function(){
+                        clickGameNumberButtons(input.id, label.name)
+                    })
                 }
 
                 const p = doc.createElement('p')
@@ -111,11 +121,17 @@
             }
 
             function clearGameSettings () {
-                // const elem = doc.getElementById('number-1')
-                // elem.parentNode.removeChild(elem)
+                const gameDesc = doc.getElementById('game-desc')
+                
+                if(gameDesc){
+                    function removeDesc(){
+                        gameDesc.remove()
+                    }
+                    removeDesc()
+                }
 
-                // const p = doc.getElementById('game-desc')
-                // p.remove()
+                const btnGnDiv = doc.getElementById('game-number-buttons')
+                btnGnDiv.innerHTML = ''
 
             }
 
@@ -125,13 +141,59 @@
 
             }
 
+            async function verifyGameNumberChecked(id, name) {
+                gamesInfo = await loadGamesInfo()
+                const games = gamesInfo.types
+                const game = games.filter(x => {
+                    return x.type === name
+                })
+
+                const checkbox = doc.getElementById(id)
+
+                if(checkbox.checked){
+                    return parseInt(id)
+                }
+                // doc.on('change', '.btn-gn', function(){
+                //     const countShared = ('.btn-gn:checked').length
+                //     if(countShared > game.maxNumber){
+                //         alert(`Você selecionou mais que ${game.maxNumber} números!`)
+                //         (this).prop('checked', false)
+                //     }
+                // })
+            }
+
+            async function clickGameNumberButtons(id, name){
+                const numberClicked = await verifyGameNumberChecked(id, name)
+
+                if(typeof numberClicked !== 'undefined')
+                    console.log(numberClicked)
+            }
+
+            function clearGameButton() {
+                let checkbox
+
+                for(let i = 0; i < 80; i++){
+                    checkbox = doc.getElementById(`${i+1}`)
+                    if(checkbox){
+                        checkbox.checked = false
+                    }
+                }
+            }
+
+            function completeGameButton() {
+
+            }
+            
             win.addEventListener('load', function(){
                 loadGamesInfo()
                 insertGameModeButton()
                 firstGameSelected()
-                clickGameModeButton('Quina')
 
             })
+
+            doc.getElementById('clear-game-btn').onclick = function(){
+                clearGameButton()
+            }
 
 
         }
