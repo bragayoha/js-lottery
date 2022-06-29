@@ -1,4 +1,4 @@
-((DOM, win, doc) => {
+((_DOM, win, doc) => {
     'use strict'
     
         function app () {
@@ -8,6 +8,7 @@
             let arrNum = []
             let cartGamesCompleted = []
             let cartTotal = 0
+            let isCartEmptyBool = true
             
             function getData (endpoint) {
                 return new Promise((resolve, reject) => {
@@ -90,33 +91,36 @@
                 })
                 game = game[0]
 
+                const newBetForGame = doc.getElementById('nb-game-mode')
+                newBetForGame.innerHTML = `FOR ${game.type.toUpperCase()}`
+
                 for(let i = 0; i < game.range; i++){
-                    const input = doc.createElement('input')
-                    input.setAttribute('type', 'checkbox')
-                    input.setAttribute('class', 'btn-check')
-                    input.setAttribute('id', `${i+1}`)
-                    input.setAttribute('name', game.type)
-                    input.setAttribute('autocomplete', 'off')
+                    const gameNum = doc.createElement('input')
+                    gameNum.setAttribute('type', 'checkbox')
+                    gameNum.setAttribute('class', 'btn-check')
+                    gameNum.setAttribute('id', `${i+1}`)
+                    gameNum.setAttribute('name', game.type)
+                    gameNum.setAttribute('autocomplete', 'off')
                     
-                    const label = doc.createElement('label')
-                    label.setAttribute('class', 'btn btn-gn d-flex justify-content-center align-items-center gn-space')
-                    label.setAttribute('for', input.id)
-                    label.innerHTML = i+1
+                    const lGameNum = doc.createElement('label')
+                    lGameNum.setAttribute('class', 'btn btn-gn d-flex justify-content-center align-items-center gn-space')
+                    lGameNum.setAttribute('for', gameNum.id)
+                    lGameNum.innerHTML = i+1
 
-                    doc.getElementById('game-number-buttons').appendChild(input)
-                    doc.getElementById('game-number-buttons').appendChild(label)
+                    doc.getElementById('game-number-buttons').appendChild(gameNum)
+                    doc.getElementById('game-number-buttons').appendChild(lGameNum)
 
-                    label.addEventListener('click', function(){
-                        clickGameNumberButtons(input.id, input.name)
+                    lGameNum.addEventListener('click', function(){
+                        clickGameNumberButtons(gameNum.id, gameNum.name)
                     })
                 }
 
-                const p = doc.createElement('p')
-                p.setAttribute('class', 'gd')
-                p.setAttribute('id', 'game-desc')
+                const gameDesc = doc.createElement('p')
+                gameDesc.setAttribute('class', 'gd')
+                gameDesc.setAttribute('id', 'game-desc')
 
-                p.innerHTML = game.description
-                doc.getElementById('gd-div').appendChild(p)
+                gameDesc.innerHTML = game.description
+                doc.getElementById('gd-div').appendChild(gameDesc)
 
                 currentGame = game.type
 
@@ -154,9 +158,6 @@
                     return x.type === currentGame
                 })
                 game = game[0]
-
-                console.log('length', arrNum.length)
-                console.log('max', game.maxNumber)
 
                 return arrNum.length >= game.maxNumber
             }
@@ -235,10 +236,14 @@
 
                 if(arrNum.length === game.maxNumber){
                     cartTotal += game.price
-
                     cartGamesCompleted.push(`${game.type}-${cartGamesCompleted.length+1}`)
+                    isCartEmptyBool = false
+                    
+                    const tabel = doc.getElementById('cart-table')
+                    tabel.setAttribute('style', 'max-height: 320px !important; overflow: auto !important')
+
                     const tr = doc.createElement('tr')
-                    tr.setAttribute('id', `${game.type}-${cartGamesCompleted.length+1}`)
+                    tr.setAttribute('id', `${game.type}-${cartGamesCompleted.length}`)
                     
                     const div1 = doc.createElement('div')
                     div1.setAttribute('class', 'd-flex flex-row justify-content-start align-items-center p-2')
@@ -246,15 +251,22 @@
                     const trashButton = doc.createElement('a')
                     trashButton.setAttribute('class', `trash-button`)
                     trashButton.setAttribute('type', 'button')
-                    trashButton.setAttribute('id', `trash-btn ${game.type}-${cartGamesCompleted.length+1}`)
+                    trashButton.setAttribute('id', `trash-btn ${game.type}-${cartGamesCompleted.length}`)
                     trashButton.onclick = function(){
                         if(trashButton.id === `trash-btn ${tr.id}`){
                             function removeBet(){
                                 tr.remove()
                                 cartTotal -= game.price
+                                cartGamesCompleted = cartGamesCompleted.filter((value) => {
+                                    return value != tr.id
+                                })
+                                if(cartGamesCompleted.length === 0){
+                                    isCartEmptyBool = true
+                                }
                             }
                             removeBet()
                             autoSumCartContent()
+                            isCartEmpty()
                             alert('Aposta removida com sucesso!')
                         }
                     }
@@ -288,7 +300,7 @@
                     gamePrice.setAttribute('class', 'game-price mb-0')
                     gamePrice.innerHTML = `${game.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`
     
-                    doc.getElementById('cart-table').appendChild(tr)
+                    tabel.appendChild(tr)
                     tr.appendChild(div1)
                     div1.appendChild(trashButton)
                     trashButton.appendChild(trashImg)
@@ -300,18 +312,44 @@
                     
                     clearGameButton()
                     autoSumCartContent()
+
                     alert('Aposta inserida no carrinho com sucesso!')
                 } else {
                     alert(`Selecione mais ${game.maxNumber-arrNum.length} números!`)
                 }
             }
 
-            
+            function isCartEmpty () {
+                if(isCartEmptyBool){
+                    const tr = doc.createElement('tr')
+                    tr.setAttribute('id', 'empty-cart-elem')
+    
+                    const div = doc.createElement('div')
+                    div.setAttribute('class', 'cart-content p-2 flex-column border-start')
+                    div.setAttribute('style', 'border-color: #717171; background-color: #F4F4F4')
+    
+                    const emptyMsg = doc.createElement('p')
+                    emptyMsg.setAttribute('class', 'card-numbers')
+                    emptyMsg.innerHTML = 'O carrinho se encontra vazio! Faça sua aposta, não perca tempo!'
+    
+                    doc.getElementById('cart-table').appendChild(tr)
+                    tr.appendChild(div)
+                    div.appendChild(emptyMsg)
+
+                } else {
+                    function removeEmptyElem(){
+                        doc.getElementById('empty-cart-elem').remove()
+                    }
+                    removeEmptyElem()
+                }
+            }
+
             win.addEventListener('load', function(){
                 loadGamesInfo()
                 insertGameModeButton()
                 firstGameSelected()
                 autoSumCartContent()
+                isCartEmpty()
 
             })
 
@@ -325,6 +363,7 @@
 
             doc.getElementById('add-to-cart-btn').onclick = function (){
                 addToCartButton()
+                isCartEmpty()
             }
 
         }
