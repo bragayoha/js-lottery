@@ -108,9 +108,9 @@
                 <label class="btn btn-gn d-flex justify-content-center align-items-center gn-space" for="game-number-16">16</label> -->
             </div>
             <div class="d-flex flex-row p-0 ms-5 mt-3 mb-5">
-                <button class="btn-cp-cl border-1 me-4">Complete game</button>
+                <button class="btn-cp-cl border-1 me-4" id="complete-game-btn">Complete game</button>
                 <button class="btn-cp-cl border-1 me-4" id="clear-game-btn">Clear game</button>
-                <button class="btn-add-cart border-1 ms-auto me-2s">Add to cart <img src="./assets/shopping_cart.png" width="26px" height="20px"></button>
+                <button class="btn-add-cart border-1 ms-auto me-2s" id="add-to-cart-btn">Add to cart <img src="./assets/shopping_cart.png" width="26px" height="20px"></button>
             </div>
         </div>
         <!--//LEFT "BODY"-->
@@ -119,8 +119,8 @@
             <div class="cart-table m-5 border">
                 <div class="d-flex flex-column m-2 p-2">
                     <p class="cart-title"> CART </p>
-                    <table class="d-flex flex-column" data-js="cart-table">
-                        <tr>
+                    <table class="d-flex flex-column" id="cart-table">
+                        <!-- <tr>
                             <div class="d-flex flex-row justify-content-between align-items-center p-2">
                                 <a class="trash-button" type="button"><img src="./assets/trash_gray.png" width="50%" height="50%"></a>
                                 <div class="cart-content-lf p-2 flex-column border-start">
@@ -131,11 +131,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </tr>
+                        </tr> -->
                     </table>
                     <div class="d-flex flex-row">
                         <p class="cart-total-1 me-2">CART </p>
-                        <p class="cart-total-2">TOTAL: R$ 00,00</p>
+                        <p class="cart-total-2" id="cart-total">TOTAL: R$ 00,00</p>
                     </div>
                 </div>
                 <div class="save-cart d-flex justify-content-center border-top border-1">

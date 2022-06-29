@@ -54,50 +54,6 @@ body, html{
     border-radius: 100px;
 }
 
-/* .btn-outline-lf{
-    --bs-btn-color:#7F3992;
-    --bs-btn-border-color:#7F3992;
-    --bs-btn-hover-color:#fff;
-    --bs-btn-hover-bg:#7F3992;
-    --bs-btn-hover-border-color:#7F3992;
-    --bs-btn-active-color:#fff;
-    --bs-btn-active-bg:#7F3992;
-    --bs-btn-active-border-color:#7F3992;
-    --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color:#7F3992;
-    --bs-btn-disabled-bg:transparent;
-    --bs-gradient:none
-}
-
-.btn-outline-ms{
-    --bs-btn-color:#01AC66;
-    --bs-btn-border-color:#01AC66;
-    --bs-btn-hover-color:#fff;
-    --bs-btn-hover-bg:#01AC66;
-    --bs-btn-hover-border-color:#01AC66;
-    --bs-btn-active-color:#fff;
-    --bs-btn-active-bg:#01AC66;
-    --bs-btn-active-border-color:#01AC66;
-    --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color:#01AC66;
-    --bs-btn-disabled-bg:transparent;
-    --bs-gradient:none
-}
-
-.btn-outline-q{
-    --bs-btn-color:#F79C31;
-    --bs-btn-border-color:#F79C31;
-    --bs-btn-hover-color:#fff;
-    --bs-btn-hover-bg:#F79C31;
-    --bs-btn-hover-border-color:#F79C31;
-    --bs-btn-active-color:#fff;
-    --bs-btn-active-bg:#F79C31;
-    --bs-btn-active-border-color:#F79C31;
-    --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color:#F79C31;
-    --bs-btn-disabled-bg:transparent;
-    --bs-gradient:none
-} */
 /* Fill your bet */
 .fyb {
     font: italic normal bold 17px/24px Helvetica;
@@ -196,39 +152,13 @@ body, html{
     color: #707070;
 }
 /* Row Table Cart */
-.cart-content-lf{
-    border-color: #7F3992 !important;
+.cart-content{
     border-width: 4px !important;
     border-radius: 4px;
 }
 
-.game-type-lf {
+.game-type {
     font: italic normal bold 16px Helvetica;
-    color: #7F3992;
-    text-align: center;
-}
-
-.cart-content-ms{
-    border-color: #27C383 !important;
-    border-width: 4px !important;
-    border-radius: 4px;
-}
-
-.game-type-ms {
-    font: italic normal bold 16px Helvetica;
-    color: #27C383;
-    text-align: center;
-}
-
-.cart-content-q{
-    border-color: #F79C31 !important;
-    border-width: 4px !important;
-    border-radius: 4px;
-}
-
-.game-type-q {
-    font: italic normal bold 16px Helvetica;
-    color: #F79C31;
     text-align: center;
 }
 
