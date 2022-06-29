@@ -270,7 +270,11 @@
     
                     const cartNumbers = doc.createElement('p')
                     cartNumbers.setAttribute('class', 'card-numbers')
-                    cartNumbers.innerHTML = arrNum.join(', ')
+                    cartNumbers.innerHTML = arrNum.sort((a, b) => { 
+                        if(a > b) return 1
+                        if(a < b) return -1
+                        return 0
+                    }).join(', ')
     
                     const div3 = doc.createElement('div')
                     div3.setAttribute('class', 'd-flex flex-row')
